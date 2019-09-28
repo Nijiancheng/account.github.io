@@ -51,8 +51,6 @@ export default {
   },
   methods: {
     goToRouter(path) {
-      // console.log(_this.path[0].id);
-      // this.id = _this.path[0].id;
       this.$router.push("/" + path);
     },
     logout() {

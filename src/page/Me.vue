@@ -177,8 +177,6 @@ export default {
         });
     },
     goToRouter(path) {
-      // this.id = _this.path[0].id;
-      // console.log(path);
       this.$router.push("/" + path);
     }
   },

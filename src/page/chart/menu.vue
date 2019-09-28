@@ -163,7 +163,6 @@ export default {
               } else {
                 Toast(response.data.data);
               }
-              // _this.path[0].remove();
             });
         })
         .catch(() => {

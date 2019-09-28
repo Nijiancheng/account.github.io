@@ -63,7 +63,7 @@
             </div>
           </div>
           <template slot="right">
-            <van-button square type="danger" text="删除" @click="del" :id="item.id" />
+            <van-button square type="danger" text="删除" @click="del(item.id)" />
           </template>
         </van-swipe-cell>
       </van-list>
@@ -284,18 +284,17 @@ export default {
           this.outType = res.data.data;
         });
     },
-    del(_this) {
+    del(id) {
       Dialog.confirm({
         title: "删除",
         message: "确认删除该条数据嘛？"
       })
         .then(() => {
-          // console.log(_this.path[0].id);
           // 删除订单
           this.axios
             .post(
               api.Del.Url1 +
-                _this.path[0].id +
+               id +
                 api.Del.Url2 +
                 localStorage.getItem("token")
             )
@@ -310,7 +309,6 @@ export default {
                 this.getDetailed();
                 // this.onLoad();
               }
-              // _this.path[0].remove();
             });
         })
         .catch(() => {
